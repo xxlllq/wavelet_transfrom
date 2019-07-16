@@ -1,0 +1,11 @@
+C:\Users\xxl\Desktop\WaveletTransform\obj\Debug\netstandard2.0\WaveletTransform.csproj.CoreCompileInputs.cache
+C:\Users\xxl\Desktop\WaveletTransform\obj\Debug\netstandard2.0\WaveletTransform.AssemblyInfoInputs.cache
+C:\Users\xxl\Desktop\WaveletTransform\obj\Debug\netstandard2.0\WaveletTransform.AssemblyInfo.cs
+C:\Users\xxl\Desktop\WaveletTransform\bin\Debug\netstandard2.0\WaveletTransform.deps.json
+C:\Users\xxl\Desktop\WaveletTransform\bin\Debug\netstandard2.0\WaveletTransform.dll
+C:\Users\xxl\Desktop\WaveletTransform\bin\Debug\netstandard2.0\WaveletTransform.pdb
+C:\Users\xxl\Desktop\WaveletTransform\obj\Debug\netstandard2.0\WaveletTransform.dll
+C:\Users\xxl\Desktop\WaveletTransform\obj\Debug\netstandard2.0\WaveletTransform.pdb
+C:\Users\xxl\Desktop\WaveletTransform\obj\Debug\netstandard2.0\WaveletTransform.csprojAssemblyReference.cache
+C:\Users\xxl\Desktop\WaveletTransform\bin\Debug\netstandard2.0\libfftw3-3-x64.dll
+C:\Users\xxl\Desktop\WaveletTransform\bin\Debug\netstandard2.0\libfftw3-3-x86.dll

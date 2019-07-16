@@ -1,0 +1,442 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WaveletTransform</name>
+    </assembly>
+    <members>
+        <member name="T:WaveletTransform.Model.CWTModel">
+            <summary>
+            一维连续变换Model类
+            </summary>
+        </member>
+        <member name="T:WaveletTransform.Model.WaveDec1ViewModel">
+            <summary>
+            一维小波分解结果ViewModel
+            </summary>
+        </member>
+        <member name="P:WaveletTransform.Model.WaveDec1ViewModel.AppAndDetail">
+            <summary>
+            近似系数+细节系数
+            </summary>
+        </member>
+        <member name="P:WaveletTransform.Model.WaveDec1ViewModel.Coefficient">
+            <summary>
+            各层系数长度 
+            </summary>
+        </member>
+        <member name="P:WaveletTransform.Model.WaveDec1ViewModel.Dwt">
+            <summary>
+            变换类
+            </summary>
+        </member>
+        <member name="T:WaveletTransform.Model.WavefunModel">
+            <summary>
+            小波基函数实体类，待修改
+            </summary>
+        </member>
+        <member name="P:WaveletTransform.Model.WaveletsInfoModel.centerfc">
+            <summary>
+            中心频率
+            </summary>
+        </member>
+        <member name="T:WaveletTransform.Root.DWT">
+            <summary>
+            一维小波变换类
+            </summary>
+        </member>
+        <member name="P:WaveletTransform.Root.DWT.Lo_R">
+            <summary>
+            低通重构滤波器系数
+            </summary>
+        </member>
+        <member name="P:WaveletTransform.Root.DWT.Hi_R">
+            <summary>
+            高通重构滤波器系数
+            </summary>
+        </member>
+        <member name="P:WaveletTransform.Root.DWT.Lo_D">
+            <summary>
+            低通分解滤波器系数
+            </summary>
+        </member>
+        <member name="P:WaveletTransform.Root.DWT.Hi_D">
+            <summary>
+            高通分解滤波器系数
+            </summary>
+        </member>
+        <member name="P:WaveletTransform.Root.DWT.Oelts">
+            <summary>
+            一维小波输入的声信号
+            </summary>
+        </member>
+        <member name="P:WaveletTransform.Root.DWT.Telts">
+            <summary>
+            二维小波输入的声信号
+            </summary>
+        </member>
+        <member name="M:WaveletTransform.Root.DWT.#ctor(System.Collections.Generic.List{System.Double},System.String)">
+            <summary>
+            实例化一维DWT
+            </summary>
+            <param name="orginal">输入源信号</param>
+            <param name="wname">haar、db1~db10</param>
+        </member>
+        <member name="M:WaveletTransform.Root.DWT.#ctor(System.Collections.Generic.List{System.Collections.Generic.List{System.Double}},System.String)">
+            <summary>
+            实例化二维DWT
+            </summary>
+            <param name="orginal">输入源信号</param>
+            <param name="wname">haar、db1~db10</param>
+        </member>
+        <member name="M:WaveletTransform.Root.DWT.GetFilters(WaveletTransform.Root.DWT)">
+            <summary>
+            根据给定滤波器,产生两对孪生小波变换基对象
+            </summary>
+            <param name="w"></param>
+        </member>
+        <member name="M:WaveletTransform.Root.DWT.op_Multiply(System.Double,WaveletTransform.Root.DWT)">
+            <summary>
+            数组倍数缩放
+            </summary>
+            <param name="d"></param>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WaveletTransform.Root.DWT.Wrev(System.Collections.Generic.List{System.Double})">
+            <summary>
+            反转
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WaveletTransform.Root.DWT.Qmf(System.Collections.Generic.List{System.Double})">
+            <summary>
+            积分镜像过滤
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WaveletTransform.Root.DWT.Altsign(System.Collections.Generic.List{System.Double})">
+            <summary>
+            间隔变号
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WaveletTransform.Root.DWT.Norm(System.Collections.Generic.List{System.Double})">
+            <summary>
+            模2
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WaveletTransform.Root.DWT.Sum(System.Collections.Generic.List{System.Double})">
+            <summary>
+            合计
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WaveletTransform.Root.DWT.Edge(System.Int32,System.Int32)">
+            <summary>
+            边缘处理
+            </summary>
+            <param name="x"></param>
+            <param name="xsize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WaveletTransform.Root.DWT.Space(System.Int32,System.Int32,System.Collections.Generic.List{System.Double})">
+            <summary>
+            返回间隔数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WaveletTransform.Util.CommonUtil">
+            <summary>
+            通用工具类
+            </summary>
+        </member>
+        <member name="M:WaveletTransform.Util.CommonUtil.DeepCopyByBin``1(``0)">
+            <summary>
+            深拷贝
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WaveletTransform.Util.CommonUtil.GetRow(System.Int32,System.Double[0:,0:])">
+            <summary>
+            获取二维数组指定rid行
+            </summary>
+            <param name="rid"></param>
+            <param name="mat"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WaveletTransform.Util.CommonUtil.SetRow(System.Int32,System.Double[],System.Double[0:,0:])">
+            <summary>
+            设置二维数组中的指定行
+            </summary>
+            <param name="rid"></param>
+            <param name="row"></param>
+            <param name="mat"></param>
+        </member>
+        <member name="M:WaveletTransform.Util.CommonUtil.GetCol(System.Int32,System.Double[0:,0:])">
+            <summary>
+            获取二维数组中的指定列
+            </summary>
+            <param name="cid"></param>
+            <param name="mat"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WaveletTransform.Util.CommonUtil.SetCol(System.Int32,System.Double[],System.Double[0:,0:])">
+            <summary>
+            设置二维数组中的列
+            </summary>
+            <param name="cid"></param>
+            <param name="col"></param>
+            <param name="mat"></param>
+        </member>
+        <member name="T:WaveletTransform.Util.DWTUtil">
+            <summary>
+            一维/二维小波变换
+            </summary>
+        </member>
+        <member name="M:WaveletTransform.Util.DWTUtil.DWT1(System.Collections.Generic.List{System.Double},System.String)">
+            <summary>
+            一维离散小波变换
+            </summary>
+            <param name="orginal">输入源信号</param>
+            <param name="wname">haar、db1~db10</param>
+            <returns>>近似系数+细节系数，各层系数长度</returns>
+        </member>
+        <member name="M:WaveletTransform.Util.DWTUtil.DWT1(System.Collections.Generic.List{System.Double},WaveletTransform.Root.DWT)">
+            <summary>
+            一维离散小波变换
+            </summary>
+            <param name="orginal">输入源信号</param>
+            <param name="dwt">变换类</param>
+            <returns>当前近似系数(信号低频成分)+细节系数(信号高频成分)，各层系数长度</returns>
+        </member>
+        <member name="M:WaveletTransform.Util.DWTUtil.IDWT1(System.Collections.Generic.List{System.Double},System.Collections.Generic.List{System.Double},WaveletTransform.Root.DWT,System.Int32)">
+            <summary>
+            一维小波逆变换
+            </summary>
+            <param name="a"> </param>
+            <param name="b"> </param>
+            <param name="dwt">变换类</param>
+            <param name="p"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WaveletTransform.Util.DWTUtil.IDWT1(System.Collections.Generic.List{System.Double},System.Collections.Generic.List{System.Double},System.String,System.Int32)">
+            <summary>
+            一维小波逆变换
+            </summary>
+            <param name="a"> </param>
+            <param name="b"> </param>
+            <param name="wname">haar、db1~db10</param>
+            <param name="p"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WaveletTransform.Util.DWTUtil.CWT(System.Collections.Generic.List{System.Double},System.Int32,System.String,System.Double)">
+            <summary>
+            连续小波变换
+            </summary>
+            <param name="sig">输入信号</param>
+            <param name="scals">尺度</param>
+            <param name="wname">小波名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:WaveletTransform.Util.DWTUtil.DWT2(System.Collections.Generic.List{System.Collections.Generic.List{System.Double}},System.String)">
+            <summary>
+            二维小波变换
+            </summary>
+            <param name="orginal">输入源信号</param>
+            <param name="wname">haar、db1~db10</param>
+            <returns>cA(近似分量、Dictionary位置1)，cH(水平细节分量、Dictionary位置2),cV(垂直细节分量、Dictionary位置3),cD(对角细节分量、Dictionary位置4)</returns>
+        </member>
+        <member name="M:WaveletTransform.Util.DWTUtil.DWT2(System.Collections.Generic.List{System.Collections.Generic.List{System.Double}},WaveletTransform.Root.DWT)">
+            <summary>
+            二维小波变换
+            </summary>
+            <param name="orginal">输入源信号</param>
+            <param name="dwt">变换类</param>
+            <returns></returns>
+        </member>
+        <!-- 对于成员“M:WaveletTransform.Util.DWTUtil.Appcoef(System.Collections.Generic.List{System.Double},System.Collections.Generic.List{System.Int32},WaveletTransform.Root.DWT,System.Int32)”忽略有格式错误的 XML 注释 -->
+        <member name="M:WaveletTransform.Util.DWTUtil.Appcoef(System.Collections.Generic.List{System.Double},System.Collections.Generic.List{System.Int32},System.String)">
+            <summary>
+            提取近似系数
+            </summary>
+            <param name="x">一维小波分解后的结果</param>
+            <param name="l">层级系数</param>
+            <param name="wname">haar、db1~db10</param>
+        </member>
+        <member name="M:WaveletTransform.Util.DWTUtil.Detcoef(System.Collections.Generic.List{System.Double},System.Collections.Generic.List{System.Int32},System.Int32)">
+            <summary>
+            提取细节系数
+            </summary>
+            <param name="c">一维小波分解后的结果</param>
+            <param name="l">层级系数</param>
+            <param name="p">层级数</param>
+            <returns></returns>
+        </member>
+        <member name="M:WaveletTransform.Util.DWTUtil.Wrcoef(System.String,WaveletTransform.Model.WaveDec1ViewModel,System.Int32)">
+            <summary>
+            近似系数重构/细节系数重构
+            </summary>
+            <param name="type">a：approximate近似；d：detail细节</param>
+            <param name="model"></param>
+            <param name="lev"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WaveletTransform.Util.DWTUtil.Upcoef(System.String,WaveletTransform.Root.DWT,System.Int32)">
+            <summary>
+            一维小波系数直接构造
+            </summary>
+            <param name="type">"a"(近似系数重构)或"d(细节系数重构)"</param>
+            <param name="model"></param>
+            <param name="iter">迭代次数</param>
+            <returns></returns>
+        </member>
+        <member name="M:WaveletTransform.Util.TransformUtil.DWT1Extend(System.String,System.Collections.Generic.List{System.Double},System.Int32)">
+            <summary>
+            一维小波变换中的延拓方法
+            </summary>
+            <param name="mode">延拓模型：默认为sym，对称模型</param>
+            <param name="xd">输入源信号</param>
+            <param name="lf"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WaveletTransform.Util.TransformUtil.DWT2Extend(System.String,System.String,System.Collections.Generic.List{System.Collections.Generic.List{System.Double}},System.Int32,System.String)">
+            <summary>
+            二维小波变换中的延拓方法
+            </summary>
+            <param name="type">2d：二维；addrow：添加行；addcol：添加列。</param>
+            <param name="mode">延拓模型：默认为sym，对称模型</param>
+            <param name="xd">输入源信号</param>
+            <param name="lf"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WaveletTransform.Util.TransformUtil.GetSymIndices(System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="length"></param>
+            <param name="lf"></param>
+            <param name="needConcat"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WaveletTransform.Util.TransformUtil.Convolve(System.Collections.Generic.List{System.Double},System.Collections.Generic.List{System.Double},System.String)">
+            <summary>
+            一维小波卷积计算
+            </summary>
+            <param name="u">源数据</param>
+            <param name="v">卷积核</param>
+            <param name="shape">shape：full，same，valid</param>
+            <returns></returns>
+        </member>
+        <member name="M:WaveletTransform.Util.TransformUtil.Convolve(System.Collections.Generic.List{System.Collections.Generic.List{System.Double}},System.Collections.Generic.List{System.Double},System.String)">
+            <summary>
+            二维小波卷积计算
+            </summary>
+            <param name="u">源数据</param>
+            <param name="v">卷积核</param>
+            <param name="shape">shape：full，same，valid</param>
+        </member>
+        <member name="M:WaveletTransform.Util.TransformUtil.ConvDown(System.Collections.Generic.List{System.Collections.Generic.List{System.Double}},System.Collections.Generic.List{System.Double},System.Int32,System.Int32,System.Int32)">
+            <summary>
+            向量卷积
+            </summary>
+            <param name="x"></param>
+            <param name="f"></param>
+            <param name="l"></param>
+        </member>
+        <member name="M:WaveletTransform.Util.TransformUtil.CentFrq(System.String,System.Int32)">
+            <summary>
+            计算以wname命名的母小波的中心频率
+            </summary>
+            <param name="wname">小波名称</param>
+            <param name="iter">迭代次数</param>
+            <returns></returns>
+        </member>
+        <member name="M:WaveletTransform.Util.TransformUtil.Scal2Frq(System.Collections.Generic.List{System.Double},System.Double,System.Double)">
+            <summary>
+            尺度转换为实际频率
+            </summary>
+            <param name="scal">尺度</param>
+            <param name="centfrq">中心頻率</param>
+            <param name="delta">采样周期</param>
+            <returns></returns>
+        </member>
+        <member name="M:WaveletTransform.Util.TransformUtil.Intwave(WaveletTransform.Model.WaveletsInfoModel,System.String,System.Int32)">
+            <summary>
+            积分小波函数
+            </summary>
+            <param name="type"></param>
+            <param name="wname"></param>
+            <param name="precis"></param>
+        </member>
+        <member name="T:WaveletTransform.Util.WaveDecUtil">
+            <summary>
+            一维/二维离散小波分解
+            </summary>
+        </member>
+        <member name="M:WaveletTransform.Util.WaveDecUtil.WaveDec1(System.Collections.Generic.List{System.Double},System.Int32,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="orginal">输入源信号</param>
+            <param name="lev">分解层级</param>
+            <param name="wname">haar、db1~db10</param>
+            <returns>各层近似系数+细节系数，各层系数</returns>
+        </member>
+        <member name="M:WaveletTransform.Util.WaveDecUtil.WaveDec2(System.Collections.Generic.List{System.Collections.Generic.List{System.Double}},System.Int32,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="orginal">输入源信号</param>
+            <param name="lev">分解层级</param>
+            <param name="wname">haar、db1~db10</param>
+            <returns></returns>
+        </member>
+        <member name="M:WaveletTransform.Util.WaveDecUtil.ConvertToLA(System.Collections.Generic.List{System.Collections.Generic.List{System.Double}})">
+            <summary>
+            二维集合合并成列向量
+            </summary>
+            <param name="or"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WaveletTransform.Util.WavemngrUtil">
+            <summary>
+            小波管理器
+            </summary>
+        </member>
+        <member name="M:WaveletTransform.Util.WavemngrUtil.Command(System.String,System.String)">
+            <summary>
+            操作
+            </summary>
+            <param name="option">操作代号</param>
+            <param name="wname">小波名称</param>
+        </member>
+        <member name="M:WaveletTransform.Util.WavemngrUtil.Wavefun(System.String,WaveletTransform.Model.WaveletsInfoModel,System.Int32)">
+            <summary>
+            小波基函数
+            </summary>
+            <param name="wname">小波名称</param>
+            <param name="infoModel">小波信息</param>
+            <param name="iter">迭代次数</param>
+        </member>
+        <member name="M:WaveletTransform.Util.WavemngrUtil.Linspace(System.Double,System.Double,System.Int32)">
+            <summary>
+            产生d1和d2之间等间隔的n个数
+            </summary>
+            <param name="d1"></param>
+            <param name="d2"></param>
+            <param name="n"></param>
+        </member>
+        <member name="M:WaveletTransform.Util.WavemngrUtil.GetNBpts(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="nbpts"></param>
+            <param name="iter"></param>
+            <param name="logn"></param>
+            <returns>nbpts+nb+dn</returns>
+        </member>
+    </members>
+</doc>
